@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Map Background</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+
+    
+    background-image:url('https://images.unsplash.com/photo-1524661135-423995f22d0b');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.container{
+    background:rgba(0,0,0,0.5);
+    color:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    width:80%;
+}
+
+h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+p{
+    font-size:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>WORLD TIME</h1>
+    <p>10 Country Live Clock</p>
+</div>
+<h6 id="usa-time"> usa time</h6>
+<h6 id="uk-time"> uk time</h6>
+<script>
+    setInterval(()=>{
+         const now = new Date();
+         const usa = now.toLocaleTimeString("en-us",{ timeZone: "america/new_york"});//
+         document.getElementById("usa-time").textContent='usa time :${usa}';
+         const uk = now.toLocaleTimeString("en-GB",{timeZone: "Europe/Londan"});//
+         document.getElementById("uk-time").textContent='uk time :${uk}';
+    },1000);
+    
+
+
+
+
+
+
+
+
+
+</script>
+    
+
+
+
+
+
+
+
+
+</body>
+</html>
